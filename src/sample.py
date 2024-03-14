@@ -68,15 +68,15 @@ for d in range(10,5000, 100):
     compiled_torch_time = torch.mean(torch.tensor(times))
     compiled_times.append(compiled_torch_time)
 
-# ##Timing Plot
-# plt.plot(vector_dimensions, torch_times, label="Torch")
-# plt.plot(vector_dimensions, my_kernel_times, label="My Kernel") 
-# plt.plot(vector_dimensions, compiled_times, label="Torch Compiled")
-# plt.title("Timing Comparison")
-# plt.xlabel("Vector Dimension")
-# plt.ylabel("Time (s)")
-# plt.legend()
-# plt.show()
+##Timing Plot
+plt.plot(vector_dimensions, torch_times, label="Torch")
+plt.plot(vector_dimensions, my_kernel_times, label="My Kernel") 
+plt.plot(vector_dimensions, compiled_times, label="Torch Compiled")
+plt.title("Timing Comparison")
+plt.xlabel("Vector Dimension")
+plt.ylabel("Time (s)")
+plt.legend()
+plt.show()
 
 ##Speedup Plot
 plt.plot(vector_dimensions, torch.tensor(torch_times)/torch.tensor(my_kernel_times))
