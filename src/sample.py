@@ -79,12 +79,12 @@ plt.legend()
 plt.show()
 
 ##Speedup Plot
-plt.plot(vector_dimensions, torch.tensor(torch_times)/torch.tensor(my_kernel_times))
+plt.plot(vector_dimensions, torch.tensor(compiled_times)/torch.tensor(my_kernel_times))
 plt.title("Speedup Comparison")
 plt.xlabel("Vector Dimension")
 plt.ylabel("Speedup")
 plt.show()
-print(f"Average Speedup over all Vector Sizes: {torch.mean(torch.tensor(torch_times)/torch.tensor(my_kernel_times))}")
+print(f"Average Speedup over all Vector Sizes: {torch.mean(torch.tensor(compiled_times)/torch.tensor(my_kernel_times))}")
 
 
 
